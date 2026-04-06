@@ -1696,3 +1696,67 @@ body.cursor-hover #cursor-ring { border-color: rgba(240,171,252,0.7) !important;
     border-color: var(--pl) !important;
   }
 }
+
+/* ===== RGB BORDER ON ABOUT PHOTO ===== */
+@keyframes rgbBorder {
+  0%   { border-color: rgba(192,132,252,0.7); box-shadow: 0 0 18px rgba(192,132,252,0.3); }
+  25%  { border-color: rgba(56,189,248,0.7);  box-shadow: 0 0 18px rgba(56,189,248,0.3); }
+  50%  { border-color: rgba(240,171,252,0.7); box-shadow: 0 0 18px rgba(240,171,252,0.3); }
+  75%  { border-color: rgba(16,185,129,0.7);  box-shadow: 0 0 18px rgba(16,185,129,0.3); }
+  100% { border-color: rgba(192,132,252,0.7); box-shadow: 0 0 18px rgba(192,132,252,0.3); }
+}
+.img-frame {
+  animation: rgbBorder 4s linear infinite;
+  border-width: 2px !important;
+}
+
+/* ===== FLOATING TECH BADGES ===== */
+.about-img-col { position: relative; }
+.tech-badge {
+  position: absolute;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  font-family: 'Fira Code', monospace;
+  color: var(--pl);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* posisi masing-masing badge */
+.tb-html  { top: 10%;  left: -18%;  animation: floatBadge1 3.2s ease-in-out infinite; color: #f97316; border-color: rgba(249,115,22,0.3); }
+.tb-css   { top: 28%;  right: -16%; animation: floatBadge2 3.8s ease-in-out infinite; color: #38bdf8; border-color: rgba(56,189,248,0.3); }
+.tb-js    { top: 52%;  left: -20%;  animation: floatBadge3 3.5s ease-in-out infinite; color: #fbbf24; border-color: rgba(251,191,36,0.3); }
+.tb-php   { top: 68%;  right: -18%; animation: floatBadge1 4.1s ease-in-out infinite; color: #a78bfa; border-color: rgba(167,139,250,0.3); }
+.tb-py    { top: 82%;  left: -16%;  animation: floatBadge2 3.6s ease-in-out infinite; color: #34d399; border-color: rgba(52,211,153,0.3); }
+.tb-mysql { top: 44%;  right: -22%; animation: floatBadge3 4.3s ease-in-out infinite; color: #f0abfc; border-color: rgba(240,171,252,0.3); }
+
+@keyframes floatBadge1 {
+  0%,100% { transform: translateY(0px) rotate(-2deg); }
+  50%     { transform: translateY(-8px) rotate(1deg); }
+}
+@keyframes floatBadge2 {
+  0%,100% { transform: translateY(0px) rotate(2deg); }
+  50%     { transform: translateY(-10px) rotate(-1deg); }
+}
+@keyframes floatBadge3 {
+  0%,100% { transform: translateY(-4px) rotate(-1deg); }
+  50%     { transform: translateY(4px) rotate(2deg); }
+}
+
+/* mobile: sesuaikan posisi badge agar tidak keluar layar */
+@media (max-width: 768px) {
+  .tb-html  { left: -8px; top: 8%; }
+  .tb-css   { right: -8px; top: 25%; }
+  .tb-js    { left: -8px; top: 50%; }
+  .tb-php   { right: -8px; top: 65%; }
+  .tb-py    { left: -8px; top: 80%; }
+  .tb-mysql { right: -8px; top: 42%; }
+}
