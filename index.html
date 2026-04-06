@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Median Sipayung — Junior Programmer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<!-- CUSTOM CURSOR -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="logo"><span class="logo-bracket"></span>Ms<span class="logo-bracket"></span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Skills</a></li>
+      <li><a href="#experience">Projects</a></li>
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact" class="btn-nav">Hire Me</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#services">Skills</a>
+    <a href="#experience">Projects</a>
+    <a href="#journey">Journey</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Hire Me</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <canvas id="particles"></canvas>
+
+  <div class="hero-inner">
+    <div class="hero-left">
+
+      <!-- MOBILE HERO CARD — foto + nama side by side -->
+      <div class="hero-mobile-top reveal">
+        <div class="hero-avatar-mobile">
+          <div class="ham-ring"></div>
+          <img src="fto2.jpg" alt="Foto Profil" />
+        </div>
+        <div class="hero-mobile-info">
+          <div class="hero-tag"><span class="dot-green"></span> Open to Collab</div>
+          <div class="hero-mobile-name">
+            <span class="line-small">Hello,I'm</span>
+            <span class="line-name" id="scrambleName">Median<br/>Sipayung</span>
+          </div>
+          <div class="hero-mobile-clock">
+            <span id="live-clock"></span>
+            <span class="hero-meta-dot">·</span>
+            <span>Freelance</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DESKTOP HERO TITLE -->
+      <div class="hero-desktop-top reveal">
+        <div class="hero-tag"><span class="dot-green"></span> Open to Collab</div>
+        <div class="hero-title">
+          <span class="line-small">Hello, I'm</span>
+          <span class="line-name">Median<br/>Sipayung</span>
+        </div>
+      </div>
+
+      <!-- role typing -->
+      <div class="hero-role-wrap reveal">
+        <span class="line-role"><span id="typed"></span><span class="cursor-blink">|</span></span>
+      </div>
+
+      <p class="hero-desc reveal">
+       Vocational High School students in grade XI majoring in
+
+ <span class="accent">Software Engineering </span>passionate about coding. Building websites, applications, and digital solutions.
+
+      <div class="hero-stats reveal">
+        <div class="hstat"><span class="hnum" data-target="15">0</span><span class="hplus">+</span><p>Project</p></div>
+        <div class="hstat-div"></div>
+        <div class="hstat"><span class="hnum" data-target="2">0</span><span class="hplus">+</span><p>Tahun Coding</p></div>
+        <div class="hstat-div"></div>
+        <div class="hstat"><span class="hnum" data-target="5">0</span><span class="hplus">+</span><p>Technology</p></div>
+      </div>
+    </div>
+
+    <div class="hero-right reveal">
+      <div class="avatar-wrap" id="avatarWrap">
+        <div class="avatar-glow"></div>
+        <div class="avatar-box" id="avatarBox">
+          <img src="fto2.jpg" alt="Foto Profil" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag">About Me</span>
+    </div>
+    <div class="about-grid">
+      <div class="about-img-col reveal">
+        <div class="img-frame">
+          <div class="img-inner">
+            <img src="myfoto.jpg.jpeg" alt="Foto Profil" />
+          </div>
+          <div class="img-spotlight" id="imgSpotlight"></div>
+          <div class="img-badge"><span>XI</span><p>Software Engineering</p></div>
+          <div class="img-corner tl"></div>
+          <div class="img-corner tr"></div>
+          <div class="img-corner bl"></div>
+          <div class="img-corner br"></div>
+        </div>
+      </div>
+      <p>
+  
+      </p>
+      <div class="about-text-col reveal">
+        <h2>Dari <span class="neon-text">Inspect Element</span><br/>Jadi Passionate Coder</h2>
+        <p>Perjalanan saya di dunia programming dimulai bukan dari kelas — tapi dari rasa penasaran yang tidak bisa diam. Waktu SMP, saya pertama kali membuka <span class="accent">Inspect Element</span> di browser dan berpikir, <em>"Ini sihir apa?"</em>. Sejak saat itu, saya tidak bisa berhenti.</p>
+        <p>Sekarang saya duduk di kelas 11 SMK jurusan Rekayasa Perangkat Lunak, dan setiap hari adalah kesempatan baru untuk belajar. Di sekolah saya belajar dasar-dasarnya, tapi di luar sekolah saya terus eksplorasi — dari dokumentasi resmi, sampai begadang debug kode yang error entah kenapa.</p>
+        <p>Saya percaya bahwa <strong>umur bukan penghalang untuk berkarya</strong>. Visi saya ke depan adalah menjadi Full-Stack Developer yang membangun produk digital yang benar-benar bermanfaat.</p>
+        <div class="skill-grid">
+          <div class="skill-item"><span class="skill-icon">🌐</span>HTML & CSS</div>
+          <div class="skill-item"><span class="skill-icon">⚡</span>JavaScript</div>
+          <div class="skill-item"><span class="skill-icon">🐘</span>PHP</div>
+          <div class="skill-item"><span class="skill-icon">🗄️</span>MySQL</div>
+          <div class="skill-item"><span class="skill-icon">🐍</span>Python</div>
+          <div class="skill-item"><span class="skill-icon">🔧</span>Git & GitHub</div>
+          <div class="skill-item"><span class="skill-icon">🎨</span>Bootstrap</div>
+          <div class="skill-item"><span class="skill-icon">🧠</span>Problem Solving</div>
+        </div>
+        <div class="skill-bars">
+          <div class="sbar-item">
+            <div class="sbar-label"><span>HTML & CSS</span><span class="sbar-pct">80%</span></div>
+            <div class="sbar-track"><div class="sbar-fill" data-width="90"></div></div>
+          </div>
+          <div class="sbar-item">
+            <div class="sbar-label"><span>JavaScript</span><span class="sbar-pct">60%</span></div>
+            <div class="sbar-track"><div class="sbar-fill" data-width="70"></div></div>
+          </div>
+          <div class="sbar-item">
+            <div class="sbar-label"><span>UI/UX</span><span class="sbar-pct">60%</span></div>
+            <div class="sbar-track"><div class="sbar-fill" data-width="80"></div></div>
+          </div>
+          <div class="sbar-item">
+            <div class="sbar-label"><span>Python</span><span class="sbar-pct">45%</span></div>
+            <div class="sbar-track"><div class="sbar-fill" data-width="55"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Expertise & Services</span>
+    </div>
+    <h2 class="sec-title reveal">How Can I <span class="neon-text">Help</span></h2>
+    <p class="sec-sub reveal">What can I help make happen for you?</p>
+    <div class="cards-grid">
+      <div class="scard reveal">
+         <div class="scard-badge">Andalan</div>
+        <div class="scard-icon">🌐</div>
+        <h3>Web Development</h3>
+        <p>Membangun website dari nol menggunakan HTML, CSS, dan JavaScript. Landing page hingga website multi-halaman yang responsif di semua perangkat.</p>
+        <div class="scard-expand">
+          
+          <ul>
+            <li>Landing page & company profile</li>
+            <li>Desain responsif mobile-friendly</li>
+            <li>Integrasi form & database</li>
+            <li>Optimasi performa dasar</li>
+          </ul>
+        </div>
+        <button class="scard-toggle">Lihat Detail <span class="toggle-arrow">↓</span></button>
+        <div class="scard-line"></div>
+      </div>
+      <div class="scard scard-featured reveal">
+       
+        <div class="scard-icon">⚙️</div>
+        <h3>Web App JavaScript & MySQL</h3>
+        <p>Membuat aplikasi web dinamis dengan backend JavaScript dan Node.Js. Keahlian utama yang saya asah setiap hari di jurusan RPL.</p>
+        <div class="scard-expand">
+          <ul>
+            <li>System login & registrasi</li>
+            <li>System Perpustakaan</li>
+            <li>Manajemen data & laporan</li>
+            <li>System SNBP </li>
+          </ul>
+        </div>
+        <button class="scard-toggle">Lihat Detail <span class="toggle-arrow">↓</span></button>
+        <div class="scard-line"></div>
+      </div>
+      <div class="scard reveal">
+        <div class="scard-icon">🐍</div>
+        <h3>Scripting Python</h3>
+        <p>Menggunakan Python untuk skrip otomasi, program sederhana, dan eksplorasi data. Aktif belajar ke arah data dan AI.</p>
+        <div class="scard-expand">
+          <ul>
+            <li>Skrip otomasi tugas berulang</li>
+            <li>Program berbasis CLI</li>
+            <li>Eksplorasi data sederhana</li>
+            <li>Mini project & tugas sekolah</li>
+          </ul>
+        </div>
+        <button class="scard-toggle">Lihat Detail <span class="toggle-arrow">↓</span></button>
+        <div class="scard-line"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="experience">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag">My Projects</span>
+    </div>
+    <h2 class="sec-title reveal">Projects &<span class="neon-text">Achievements</span></h2>
+    <p class="sec-sub reveal">Karya nyata yang saya bangun selama belajar coding</p>
+    <div class="proj-grid">
+
+      <div class="pcard reveal">
+        <div class="pcard-top">
+          <div class="pcard-browser">
+            <div class="browser-dots"><span></span><span></span><span></span></div>
+            <div class="browser-url">localhost/system snbp</div>
+          </div>
+          <div class="pcard-screen">
+            <div class="screen-icon">📚</div>
+            <div class="screen-lines">
+              <div class="sl w80"></div><div class="sl w60"></div><div class="sl w90"></div>
+            </div>
+          </div>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-meta">
+            <span class="pcard-year">2026 — Sekarang</span>
+            <span class="pcard-status live">● Live</span>
+          </div>
+          <h3>System SNBP</h3>
+          <p>Sistem SNBP berbasis web dengan Pendaftaran Mahasiswa/i Baru, Dashboard Admin, System Pengumuman, System Seleksi dan Lainnya</p>
+          <div class="pcard-stats">
+            <div class="ps"><strong>200+</strong><span>Data Siswa</span></div>
+            <div class="ps"><strong>3</strong><span>Role User</span></div>
+            <div class="ps"><strong>100%</strong><span>Fitur OK</span></div>
+          </div>
+          <div class="pcard-tags">
+            <span>JavaScript</span><span>Node.Js</span><span>Bootstrap</span>
+          </div>
+          <div class="pcard-links">
+            <a href="https://github.com/mediansipayung53-cmd" target="_blank" rel="noopener" class="plink-ghost">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="https://namakamu.github.io/perpustakaan" target="_blank" rel="noopener" class="plink-primary">Visit Project →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard pcard-highlight reveal">
+        <div class="pcard-top">
+          <div class="pcard-browser">
+            <div class="browser-dots"><span></span><span></span><span></span></div>
+            <div class="browser-url">localhost/budget visualizer</div>
+          </div>
+          <div class="pcard-screen">
+            <div class="screen-icon">🛒</div>
+            <div class="screen-lines">
+              <div class="sl w70"></div><div class="sl w90"></div><div class="sl w50"></div>
+            </div>
+          </div>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-meta">
+            <span class="pcard-year">2025</span>
+            <span class="pcard-status live">● Live</span>
+          </div>
+          <h3>Web Budget Visualizer</h3>
+          <p>Website Budget Visualizer lengkap dengan katalog  Riwayat Pengeluaran dan pemasukan Uang kita, Riwayat Transaksi, Riwayat Lainnya. Responsif di semua perangkat.</p>
+          <div class="pcard-stats">
+            <div class="ps"><strong>2</strong><span>Halaman</span></div>
+            <div class="ps"><strong>Mobile</strong><span>Friendly</span></div>
+            <div class="ps"><strong>Full</strong><span>CRUD</span></div>
+          </div>
+          <div class="pcard-tags">
+            <span>JS</span><span>HTML 5</span><span>CSS & J</span>
+          </div>
+          <div class="pcard-links">
+            <a href="https://github.com/usernamekamu" target="_blank" rel="noopener" class="plink-ghost">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="https://mediansipayung53-cmd.github.io/budget-visualizer-iann1/" target="_blank" rel="noopener" class="plink-primary">Visit Project →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard reveal">
+        <div class="pcard-top">
+          <div class="pcard-browser">
+            <div class="browser-dots"><span></span><span></span><span></span></div>
+            <div class="browser-url">localhost/kalkulator</div>
+          </div>
+          <div class="pcard-screen">
+            <div class="screen-icon">🧮</div>
+            <div class="screen-lines">
+              <div class="sl w60"></div><div class="sl w80"></div><div class="sl w40"></div>
+            </div>
+          </div>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-meta">
+            <span class="pcard-year">2023</span>
+            <span class="pcard-status done">✓ Done</span>
+          </div>
+          <h3>Kalkulator & Konversi Nilai</h3>
+          <p>Aplikasi web kalkulator nilai rapor dan konversi satuan. Proyek pertama yang mengajarkan logika pemrograman dasar.</p>
+          <div class="pcard-stats">
+            <div class="ps"><strong>1st</strong><span>Proyek</span></div>
+            <div class="ps"><strong>Pure</strong><span>JavaScript</span></div>
+            <div class="ps"><strong>⭐</strong><span>Nilai A</span></div>
+          </div>
+          <div class="pcard-tags">
+            <span>HTML</span><span>CSS</span><span>JS</span>
+          </div>
+          <div class="pcard-links">
+            <a href="https://github.com/usernamekamu" target="_blank" rel="noopener" class="plink-ghost">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="https://namakamu.github.io/kalkulator" target="_blank" rel="noopener" class="plink-primary">Visit Project →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section id="journey">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Perjalanan Saya</span>
+    </div>
+    <h2 class="sec-title reveal">Milestone & <span class="neon-text">Pengalaman</span></h2>
+    <p class="sec-sub reveal">Langkah-langkah yang membentuk saya jadi programmer hari ini</p>
+
+    <div class="journey-wrap">
+      <!-- garis tengah -->
+      <div class="journey-spine">
+        <div class="journey-spine-fill" id="journeySpineFill"></div>
+      </div>
+
+      <!-- Item 1 -->
+      <div class="jrow reveal">
+        <div class="jrow-left">
+          <div class="jcard">
+            <span class="jbadge project">Proyek</span>
+            <h3>Sistem Informasi Perpustakaan</h3>
+            <p class="jcard-place">📍 SMK — Tugas Akhir / PKL</p>
+            <p class="jcard-desc">Membangun sistem perpustakaan berbasis web lengkap dengan manajemen buku, peminjaman, pengembalian, dan laporan bulanan menggunakan PHP & MySQL.</p>
+            <div class="jcard-tags">
+              <span>PHP</span><span>MySQL</span><span>Bootstrap</span><span>Full-Stack</span>
+            </div>
+          </div>
+        </div>
+        <div class="jrow-center">
+          <div class="jrow-dot"></div>
+        </div>
+        <div class="jrow-right">
+          <div class="jrow-year">2025</div>
+          <button class="jfolder-btn" data-index="0">
+            <div class="jfolder-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-8l-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/></svg>
+            </div>
+            <span>Project Documentation</span>
+            <small>Click Folder</small>
+          </button>
+          <div class="jfolder-gallery" id="gallery-0">
+            <div class="jgallery-inner">
+              <img src="foto-perpustakaan-1.jpg" alt="Foto 1 Sistem Perpustakaan" class="jgallery-img" />
+              <img src="foto-perpustakaan-2.jpg" alt="Foto 2 Sistem Perpustakaan" class="jgallery-img" />
+              <img src="foto-perpustakaan-3.jpg" alt="Foto 3 Sistem Perpustakaan" class="jgallery-img" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="jrow reveal">
+        <div class="jrow-left">
+          <div class="jcard">
+            <span class="jbadge project">Proyek</span>
+            <h3>Website Toko Online</h3>
+            <p class="jcard-place">📍 Proyek Mandiri — Portofolio Pribadi</p>
+            <p class="jcard-desc">Membuat website toko online dengan katalog produk, keranjang belanja, dan checkout. Dikerjakan sendiri untuk mengasah kemampuan frontend dan backend.</p>
+            <div class="jcard-tags">
+              <span>JavaScript</span><span>PHP</span><span>MySQL</span>
+            </div>
+          </div>
+        </div>
+        <div class="jrow-center">
+          <div class="jrow-dot"></div>
+        </div>
+        <div class="jrow-right">
+          <div class="jrow-year">2024</div>
+          <button class="jfolder-btn" data-index="1">
+            <div class="jfolder-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-8l-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/></svg>
+            </div>
+            <span>Project Documentation</span>
+            <small>Click Folder</small>
+          </button>
+          <div class="jfolder-gallery" id="gallery-1">
+            <div class="jgallery-inner">
+              <img src="foto-toko-1.jpg" alt="Foto 1 Website Toko Online" class="jgallery-img" />
+              <img src="foto-toko-2.jpg" alt="Foto 2 Website Toko Online" class="jgallery-img" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="jrow reveal">
+        <div class="jrow-left">
+          <div class="jcard">
+            <span class="jbadge education">Pendidikan</span>
+            <h3>Masuk SMK Jurusan RPL</h3>
+            <p class="jcard-place">📍 SMK — Rekayasa Perangkat Lunak</p>
+            <p class="jcard-desc">Memulai perjalanan formal di dunia programming. Belajar dasar HTML, CSS, JavaScript, dan logika pemrograman. Proyek pertama: kalkulator nilai rapor.</p>
+            <div class="jcard-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Awal Belajar</span>
+            </div>
+          </div>
+        </div>
+        <div class="jrow-center">
+          <div class="jrow-dot"></div>
+        </div>
+        <div class="jrow-right">
+          <div class="jrow-year">2023</div>
+          <button class="jfolder-btn" data-index="2">
+            <div class="jfolder-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-8l-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/></svg>
+            </div>
+            <span>Project Documentation</span>
+            <small>Click Folder</small>
+          </button>
+          <div class="jfolder-gallery" id="gallery-2">
+            <div class="jgallery-inner">
+              <img src="foto-smk-1.jpg" alt="Foto 1 Masuk SMK RPL" class="jgallery-img" />
+              <img src="foto-smk-2.jpg" alt="Foto 2 Masuk SMK RPL" class="jgallery-img" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Testimoni</span>
+    </div>
+    <h2 class="sec-title reveal">Kata <span class="neon-text">Mereka</span></h2>
+    <p class="sec-sub reveal">Pendapat guru, teman, dan orang-orang yang pernah bekerja sama dengan saya</p>
+    <div class="testi-grid">
+      <div class="tcard reveal">
+        <div class="tcard-quote">"</div>
+        <div class="tcard-stars">★★★★★</div>
+        <p>"Dia salah satu siswa paling antusias yang pernah saya ajar. Tidak hanya mengerjakan tugas — dia selalu mencoba lebih dari yang diminta. Kemampuan problem solving-nya jauh di atas rata-rata."</p>
+        <div class="tcard-author">
+          <div class="tcard-av">BP</div>
+          <div><strong>Bapak/Ibu Guru</strong><span>Guru Produktif RPL, SMK</span></div>
+        </div>
+      </div>
+      <div class="tcard tcard-main reveal">
+        <div class="tcard-quote">"</div>
+        <div class="tcard-stars">★★★★★</div>
+        <p>"Saya minta tolong dibuatkan website sederhana untuk usaha kecil saya, dan hasilnya melebihi ekspektasi. Responsif, rapi, dan selesai tepat waktu. Tidak nyangka dikerjakan oleh siswa SMK!"</p>
+        <div class="tcard-author">
+          <div class="tcard-av">PK</div>
+          <div><strong>Pak Krisna</strong><span>Pemilik UMKM, Klien Pertama</span></div>
+        </div>
+      </div>
+      <div class="tcard reveal">
+        <div class="tcard-quote">"</div>
+        <div class="tcard-stars">★★★★★</div>
+        <p>"Teman satu kelompok yang paling bisa diandalkan. Kalau ada bug, dia yang pertama nyari solusinya. Kerja sama dengannya bikin proyek kelompok jadi jauh lebih lancar."</p>
+        <div class="tcard-author">
+          <div class="tcard-av">RA</div>
+          <div><strong>Rizky Ananda</strong><span>Teman Sekelas, SMK RPL</span></div>
+        </div>
+      </div>
+      <!-- dots indicator (mobile only) -->
+      <div class="testi-dots" id="testiDots">
+        <div class="testi-dot active"></div>
+        <div class="testi-dot"></div>
+        <div class="testi-dot"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Hubungi Saya</span>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-left reveal">
+        <h2>Punya Ide atau Proyek?<br/><span class="neon-text">Yuk Ngobrol!</span></h2>
+        <p>Saya terbuka untuk freelance, kolaborasi proyek, atau sekadar diskusi soal coding dan teknologi. Jangan ragu — saya tidak gigit kok. 😄</p>
+        <div class="cinfo">
+          <a href="mailto:namakamu@gmail.com" class="cinfo-item">
+            <div class="cinfo-icon">📧</div>
+            <div><strong>Email</strong><span>namakamu@gmail.com</span></div>
+          </a>
+          <a href="https://wa.me/628xxxxxxxxxx" target="_blank" rel="noopener" class="cinfo-item">
+            <div class="cinfo-icon">💬</div>
+            <div><strong>WhatsApp</strong><span>+62 8xx xxxx xxxx</span></div>
+          </a>
+          <div class="cinfo-item">
+            <div class="cinfo-icon">📍</div>
+            <div><strong>Lokasi</strong><span>Kota Kamu, Indonesia</span></div>
+          </div>
+        </div>
+        <div class="socials">
+          <a href="https://wa.me/628xxxxxxxxxx" target="_blank" rel="noopener" class="soc-btn wa" aria-label="WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span>WhatsApp</span>
+          </a>
+          <a href="https://instagram.com/usernamekamu" target="_blank" rel="noopener" class="soc-btn ig" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <span>Instagram</span>
+          </a>
+          <a href="https://github.com/usernamekamu" target="_blank" rel="noopener" class="soc-btn gh" aria-label="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            <span>GitHub</span>
+          </a>
+          <a href="https://linkedin.com/in/usernamekamu" target="_blank" rel="noopener" class="soc-btn li" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://tiktok.com/@usernamekamu" target="_blank" rel="noopener" class="soc-btn tt" aria-label="TikTok">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+            <span>TikTok</span>
+          </a>
+        </div>
+      </div>
+      <div class="contact-right reveal">
+        <form class="cform" id="contactForm">
+          <div class="cform-header">
+            <span class="cform-title">Kirim Pesan</span>
+          </div>
+          <div class="fg">
+            <label>Nama Lengkap</label>
+            <input type="text" placeholder="Nama kamu" required />
+          </div>
+          <div class="fg">
+            <label>Email</label>
+            <input type="email" placeholder="email@kamu.com" required />
+          </div>
+          <div class="fg">
+            <label>Subjek</label>
+            <input type="text" placeholder="Mau ngobrol soal apa?" />
+          </div>
+          <div class="fg">
+            <label>Pesan</label>
+            <textarea rows="4" placeholder="Ceritakan proyek atau ide kamu..." required></textarea>
+          </div>
+          <button type="submit" class="btn-glow btn-full">
+            <span class="btn-text">Kirim Pesan</span> <span>→</span>
+          </button>
+          <div class="form-success" id="formSuccess">✅ Pesan terkirim! Saya akan segera balas ya.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="#hero" class="logo"><span class="logo-bracket">&lt;</span>NK<span class="logo-bracket">/&gt;</span></a>
+      <p>© 2026 Nama Kamu — SMK RPL Kelas 11. Crafted with ❤️ & ☕</p>
+      <div class="footer-socials">
+        <a href="https://wa.me/628xxxxxxxxxx" target="_blank" rel="noopener" class="fi" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+        <a href="https://instagram.com/usernamekamu" target="_blank" rel="noopener" class="fi" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        <a href="https://github.com/usernamekamu" target="_blank" rel="noopener" class="fi" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+        <a href="https://linkedin.com/in/usernamekamu" target="_blank" rel="noopener" class="fi" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://tiktok.com/@usernamekamu" target="_blank" rel="noopener" class="fi" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+<script src="app.js"></script>
+</body>
+</html>
