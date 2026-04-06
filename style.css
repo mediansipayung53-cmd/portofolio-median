@@ -1689,9 +1689,6 @@ body.cursor-hover #cursor-ring { border-color: rgba(240,171,252,0.7) !important;
   .img-inner img {
     filter: brightness(1) grayscale(0) !important;
   }
-  .img-spotlight {
-    opacity: 0 !important;
-  }
   .img-corner {
     border-color: var(--pl) !important;
   }
