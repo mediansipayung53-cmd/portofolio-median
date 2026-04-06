@@ -1690,10 +1690,9 @@ body.cursor-hover #cursor-ring { border-color: rgba(240,171,252,0.7) !important;
     filter: brightness(1) grayscale(0) !important;
   }
   .img-spotlight {
-    opacity: 1 !important;
+    opacity: 0 !important;
   }
   .img-corner {
     border-color: var(--pl) !important;
-    box-shadow: 0 0 8px rgba(192,132,252,0.4);
   }
 }

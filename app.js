@@ -223,20 +223,23 @@ document.querySelectorAll('.btn-glow, .btn-outline, .btn-nav').forEach(btn => {
   });
 });
 
-// ===== MOBILE: ABOUT PHOTO FIX =====
+// ===== MOBILE: ABOUT PHOTO TOUCH SPOTLIGHT =====
 if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
-  const sp = document.getElementById('imgSpotlight');
-  if (sp) {
-    let t = 0;
-    function animSpotlight() {
-      t += 0.008;
-      // bergerak melingkar smooth
-      const x = 50 + Math.cos(t) * 30;
-      const y = 45 + Math.sin(t * 0.8) * 28;
-      sp.style.background = `radial-gradient(circle 100px at ${x.toFixed(1)}% ${y.toFixed(1)}%, transparent 0%, rgba(0,0,0,0.82) 100%)`;
-      requestAnimationFrame(animSpotlight);
-    }
-    animSpotlight();
+  const mobileFrame = document.querySelector('.img-frame');
+  const mobileSpotlight = document.getElementById('imgSpotlight');
+  if (mobileFrame && mobileSpotlight) {
+    mobileFrame.addEventListener('touchmove', e => {
+      e.preventDefault();
+      const touch = e.touches[0];
+      const rect = mobileFrame.getBoundingClientRect();
+      const x = ((touch.clientX - rect.left) / rect.width) * 100;
+      const y = ((touch.clientY - rect.top) / rect.height) * 100;
+      mobileSpotlight.style.opacity = '1';
+      mobileSpotlight.style.background = `radial-gradient(circle 110px at ${x.toFixed(1)}% ${y.toFixed(1)}%, transparent 0%, rgba(0,0,0,0.82) 100%)`;
+    }, { passive: false });
+    mobileFrame.addEventListener('touchend', () => {
+      mobileSpotlight.style.opacity = '0';
+    });
   }
 }
 
