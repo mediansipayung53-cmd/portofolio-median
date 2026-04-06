@@ -1686,13 +1686,19 @@ body.cursor-hover #cursor-ring { border-color: rgba(240,171,252,0.7) !important;
 
 /* ===== MOBILE: ABOUT PHOTO FIX ===== */
 @media (max-width: 768px) {
-  /* selalu dalam kondisi hover permanen */
   .img-inner img {
     filter: brightness(1) grayscale(0) !important;
   }
   .img-spotlight {
     opacity: 1 !important;
-    background: radial-gradient(circle 110px at 50% 40%, transparent 0%, rgba(0,0,0,0.82) 100%) !important;
+    animation: spotlightMove 4s ease-in-out infinite !important;
+  }
+  @keyframes spotlightMove {
+    0%   { background: radial-gradient(circle 110px at 30% 30%, transparent 0%, rgba(0,0,0,0.82) 100%); }
+    25%  { background: radial-gradient(circle 110px at 70% 25%, transparent 0%, rgba(0,0,0,0.82) 100%); }
+    50%  { background: radial-gradient(circle 110px at 65% 70%, transparent 0%, rgba(0,0,0,0.82) 100%); }
+    75%  { background: radial-gradient(circle 110px at 25% 65%, transparent 0%, rgba(0,0,0,0.82) 100%); }
+    100% { background: radial-gradient(circle 110px at 30% 30%, transparent 0%, rgba(0,0,0,0.82) 100%); }
   }
   .img-corner {
     border-color: var(--pl) !important;
