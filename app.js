@@ -223,6 +223,23 @@ document.querySelectorAll('.btn-glow, .btn-outline, .btn-nav').forEach(btn => {
   });
 });
 
+// ===== MOBILE: ABOUT PHOTO FIX =====
+if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+  const sp = document.getElementById('imgSpotlight');
+  if (sp) {
+    let t = 0;
+    function animSpotlight() {
+      t += 0.008;
+      // bergerak melingkar smooth
+      const x = 50 + Math.cos(t) * 30;
+      const y = 45 + Math.sin(t * 0.8) * 28;
+      sp.style.background = `radial-gradient(circle 100px at ${x.toFixed(1)}% ${y.toFixed(1)}%, transparent 0%, rgba(0,0,0,0.82) 100%)`;
+      requestAnimationFrame(animSpotlight);
+    }
+    animSpotlight();
+  }
+}
+
 // ===== MOBILE: AUTO OPEN SERVICE CARDS ON SCROLL =====
 if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
   // About photo — brighten on scroll
