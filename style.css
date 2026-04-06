@@ -1560,3 +1560,43 @@ body.cursor-hover #cursor-ring { border-color: rgba(240,171,252,0.7) !important;
   padding: 6px 14px; border-radius: 20px;
   margin-top: 4px; text-align: center;
 }
+
+/* ===== MOBILE: IN-VIEW REPLACES HOVER FOR JOURNEY ===== */
+@media (max-width: 768px) {
+  /* zoom tahun saat masuk viewport */
+  .jrow.in-view .jrow-year {
+    color: rgba(192,132,252,0.25) !important;
+    transform: scale(1.12);
+    letter-spacing: 6px;
+  }
+
+  /* highlight card saat masuk viewport */
+  .jrow.in-view .jcard {
+    border-color: rgba(192,132,252,0.3) !important;
+    box-shadow: 4px 0 24px rgba(255,255,255,0.06) !important;
+  }
+
+  /* dot aktif */
+  .jrow.in-view .jrow-dot,
+  .jrow.in-view::before {
+    background: var(--pd) !important;
+    border-color: var(--pd) !important;
+    box-shadow: 0 0 0 8px rgba(255,255,255,0.08), 0 0 20px rgba(192,132,252,0.25) !important;
+  }
+
+  /* folder gallery tampil lebih besar di mobile */
+  .jfolder-gallery.open {
+    max-height: 220px;
+    opacity: 1;
+  }
+
+  /* folder button hint di mobile */
+  .jfolder-btn small::after {
+    content: ' (tap untuk buka)';
+  }
+
+  /* pastikan tahun transition smooth */
+  .jrow-year {
+    transition: color 0.5s ease, transform 0.5s cubic-bezier(0.34,1.56,0.64,1), letter-spacing 0.5s ease !important;
+  }
+}
