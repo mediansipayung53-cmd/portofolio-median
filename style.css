@@ -1686,15 +1686,14 @@ body.cursor-hover #cursor-ring { border-color: rgba(240,171,252,0.7) !important;
 
 /* ===== MOBILE: ABOUT PHOTO FIX ===== */
 @media (max-width: 768px) {
-  /* foto gelap dulu biar spotlight keliatan */
   .img-inner img {
     filter: brightness(0.35) grayscale(0.2) !important;
-    transition: none !important;
   }
-  /* spotlight default tersembunyi, muncul saat touch via JS */
-  .img-spotlight {
-    opacity: 0;
-    transition: opacity 0.2s ease;
+  .img-frame.touched .img-inner img {
+    filter: brightness(1) grayscale(0) !important;
+  }
+  .img-frame.touched .img-spotlight {
+    opacity: 1 !important;
   }
   .img-corner {
     border-color: var(--pl) !important;
