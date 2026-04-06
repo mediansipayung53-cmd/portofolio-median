@@ -418,7 +418,19 @@ section { padding: 88px 0; position: relative; z-index: 1; }
   background: var(--bg); border: 1px solid rgba(255,255,255,0.07);
   border-radius: var(--r); overflow: hidden;
   transition: all 0.3s; display: flex; flex-direction: column;
+  position: relative;
 }
+.pcard::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--p), var(--pk));
+  transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
+}
+.pcard:hover::after { transform: scaleX(1); }
+.pcard-line {
+  position: absolute; top: 0; left: 0; width: 3px; height: 0;
+  background: linear-gradient(to bottom, var(--p), var(--pk)); transition: height 0.35s;
+}
+.pcard:hover .pcard-line { height: 100%; }
 .pcard:hover {
   border-color: rgba(192,132,252,0.25); transform: translateY(-6px);
   box-shadow: 0 20px 56px rgba(255,255,255,0.08);
@@ -1655,6 +1667,35 @@ body.cursor-hover #cursor-ring { border-color: rgba(240,171,252,0.7) !important;
   .pcard.mobile-active {
     border-color: rgba(192,132,252,0.45) !important;
     box-shadow: 0 0 32px rgba(124,58,237,0.3), inset 0 1px 0 rgba(255,255,255,0.1) !important;
+    background: rgba(192,132,252,0.07) !important;
     transform: translateY(-4px);
+  }
+  .pcard.mobile-active::after {
+    transform: scaleX(1) !important;
+  }
+  .pcard.mobile-active .pcard-line {
+    height: 100% !important;
+  }
+  .pcard.mobile-active .pcard-top {
+    background: rgba(192,132,252,0.05) !important;
+  }
+  .pcard.mobile-active .plink-primary {
+    box-shadow: 0 4px 16px rgba(124,58,237,0.4) !important;
+  }
+}
+
+/* ===== MOBILE: ABOUT PHOTO FIX ===== */
+@media (max-width: 768px) {
+  /* selalu dalam kondisi hover permanen */
+  .img-inner img {
+    filter: brightness(1) grayscale(0) !important;
+  }
+  .img-spotlight {
+    opacity: 1 !important;
+    background: radial-gradient(circle 110px at 50% 40%, transparent 0%, rgba(0,0,0,0.82) 100%) !important;
+  }
+  .img-corner {
+    border-color: var(--pl) !important;
+    box-shadow: 0 0 8px rgba(192,132,252,0.4);
   }
 }

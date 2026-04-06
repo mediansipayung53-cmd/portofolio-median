@@ -37,9 +37,13 @@ mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => 
 // ===== SCROLL REVEAL =====
 const ro = new IntersectionObserver((entries) => {
   entries.forEach((e, i) => {
-    if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 70); ro.unobserve(e.target); }
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 70);
+    } else {
+      e.target.classList.remove('visible');
+    }
   });
-}, { threshold: 0.08, rootMargin: '0px 0px 0px 0px' });
+}, { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 
 // ===== COUNTER =====
@@ -181,12 +185,9 @@ setInterval(updateClock, 1000);
 // ===== SKILL BARS ANIMATE ON SCROLL =====
 const barObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.querySelectorAll('.sbar-fill').forEach(bar => {
-        bar.style.width = bar.dataset.width + '%';
-      });
-      barObserver.unobserve(entry.target);
-    }
+    entry.target.querySelectorAll('.sbar-fill').forEach(bar => {
+      bar.style.width = entry.isIntersecting ? bar.dataset.width + '%' : '0%';
+    });
   });
 }, { threshold: 0.3 });
 const skillBars = document.querySelector('.skill-bars');
@@ -224,6 +225,15 @@ document.querySelectorAll('.btn-glow, .btn-outline, .btn-nav').forEach(btn => {
 
 // ===== MOBILE: AUTO OPEN SERVICE CARDS ON SCROLL =====
 if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+  // About photo — brighten on scroll
+  const imgFrameEl = document.querySelector('.img-frame');
+  if (imgFrameEl) {
+    const imgObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => e.target.classList.toggle('in-view', e.isIntersecting));
+    }, { threshold: 0.4 });
+    imgObserver.observe(imgFrameEl);
+  }
+
   // Service cards — nyala satu per satu
   const scardObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
