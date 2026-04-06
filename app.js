@@ -222,19 +222,46 @@ document.querySelectorAll('.btn-glow, .btn-outline, .btn-nav').forEach(btn => {
   });
 });
 
-// ===== MOBILE: TRIGGER HOVER EFFECTS ON SCROLL =====
+// ===== MOBILE: JOURNEY ZOOM FOLLOWS SPINE =====
 if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
-  const jrowObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-      } else {
-        entry.target.classList.remove('in-view');
+  function updateJourneyMobile() {
+    const rows = document.querySelectorAll('.jrow');
+    const spineFill = document.getElementById('journeySpineFill');
+    if (!spineFill) return;
+
+    // posisi ujung bawah spine fill (px dari top viewport)
+    const spineRect = spineFill.getBoundingClientRect();
+    const spineTip = spineRect.bottom;
+
+    rows.forEach(row => {
+      const rect = row.getBoundingClientRect();
+      const rowDot = rect.top + 28; // posisi dot di row
+      const dist = Math.abs(spineTip - rowDot);
+      const maxDist = 180;
+      // ratio: 0 = spine tepat di dot ini, 1 = jauh
+      const ratio = Math.min(dist / maxDist, 1);
+      const active = ratio < 0.6;
+
+      active ? row.classList.add('in-view') : row.classList.remove('in-view');
+
+      const yearEl = row.querySelector('.jrow-year');
+      const folderBtn = row.querySelector('.jfolder-btn');
+
+      if (yearEl) {
+        const scale = active ? (1 + (1 - ratio) * 2.8) : 1;
+        const opacity = active ? (0.08 + (1 - ratio) * 0.55) : 0.05;
+        yearEl.style.transform = `scale(${scale.toFixed(2)})`;
+        yearEl.style.color = `rgba(192,132,252,${opacity.toFixed(2)})`;
+      }
+      if (folderBtn) {
+        const scale = active ? (1 + (1 - ratio) * 0.5) : 1;
+        folderBtn.style.transform = `scale(${scale.toFixed(2)})`;
       }
     });
-  }, { threshold: 0.15 });
+  }
 
-  document.querySelectorAll('.jrow').forEach(row => jrowObserver.observe(row));
+  window.addEventListener('scroll', updateJourneyMobile, { passive: true });
+  updateJourneyMobile();
 }
 document.querySelectorAll('.jfolder-btn').forEach(btn => {
   let touchMoved = false;
