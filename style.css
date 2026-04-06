@@ -29,6 +29,7 @@ body {
   color: var(--tx);
   line-height: 1.7;
   overflow-x: hidden;
+  max-width: 100vw;
   /* subtle radial glow background */
   background-image:
     radial-gradient(ellipse 80% 50% at 20% 10%, rgba(124,58,237,0.08) 0%, transparent 60%),
@@ -515,7 +516,7 @@ section { padding: 88px 0; position: relative; z-index: 1; }
     display: flex; gap: 14px;
     overflow-x: auto; scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    padding-bottom: 16px; margin: 0 -18px; padding-left: 18px; padding-right: 18px;
+    padding-bottom: 16px; padding-left: 18px; padding-right: 18px;
     /* hide scrollbar */
     scrollbar-width: none;
   }
@@ -993,7 +994,7 @@ footer p { color: var(--tm); font-size: 0.76rem; }
 /* mobile */
 @media (max-width: 768px) {
   .journey-spine { left: 20px; }
-  .jrow { grid-template-columns: 1fr; gap: 12px; padding-left: 44px; }
+  .jrow { grid-template-columns: 1fr; gap: 12px; padding-left: 44px; box-sizing: border-box; width: 100%; }
   .jrow-center { display: none; }
   .jrow-left { padding-right: 0; }
   .jrow-right { padding-left: 0; flex-direction: row; align-items: center; flex-wrap: wrap; gap: 10px; }
@@ -1362,7 +1363,6 @@ body.cursor-hover #cursor-ring { border-color: rgba(240,171,252,0.7) !important;
 
 /* hide mobile top card on desktop */
 .hero-mobile-top { display: none; }
-.hero-role-wrap { display: none; }
 
 /* desktop top: tag + title */
 .hero-desktop-top { display: flex; flex-direction: column; margin-bottom: 8px; }

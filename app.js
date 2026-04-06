@@ -135,7 +135,7 @@ setInterval(updateClock, 1000);
   resize();
   window.addEventListener('resize', resize);
 
-  const COUNT = window.innerWidth < 600 ? 40 : 80;
+  const COUNT = window.innerWidth < 600 ? 25 : 80;
   for (let i = 0; i < COUNT; i++) {
     dots.push({
       x: Math.random() * W, y: Math.random() * H,
