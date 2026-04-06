@@ -224,7 +224,6 @@ document.querySelectorAll('.btn-glow, .btn-outline, .btn-nav').forEach(btn => {
 
 // ===== MOBILE: TRIGGER HOVER EFFECTS ON SCROLL =====
 if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
-  // Journey rows — aktifkan class 'in-view' saat masuk viewport
   const jrowObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -233,7 +232,7 @@ if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
         entry.target.classList.remove('in-view');
       }
     });
-  }, { threshold: 0.35 });
+  }, { threshold: 0.15 });
 
   document.querySelectorAll('.jrow').forEach(row => jrowObserver.observe(row));
 }
