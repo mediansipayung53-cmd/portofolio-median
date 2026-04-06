@@ -1551,3 +1551,12 @@ body.cursor-hover #cursor-ring { border-color: rgba(240,171,252,0.7) !important;
   font-size: 0.7rem; color: var(--tm);
   font-family: 'Fira Code', monospace;
 }
+
+.splash-disclaimer {
+  font-size: 0.68rem; color: var(--pk);
+  font-family: 'Fira Code', monospace;
+  background: rgba(240,171,252,0.07);
+  border: 1px solid rgba(240,171,252,0.2);
+  padding: 6px 14px; border-radius: 20px;
+  margin-top: 4px; text-align: center;
+}
