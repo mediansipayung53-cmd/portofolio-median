@@ -236,18 +236,6 @@ if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
   }, { threshold: 0.35 });
 
   document.querySelectorAll('.jrow').forEach(row => jrowObserver.observe(row));
-
-  // Auto buka folder gallery saat jrow masuk viewport
-  const galleryObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const gallery = entry.target.querySelector('.jfolder-gallery');
-        if (gallery) gallery.classList.add('open');
-      }
-    });
-  }, { threshold: 0.5 });
-
-  document.querySelectorAll('.jrow').forEach(row => galleryObserver.observe(row));
 }
 document.querySelectorAll('.jfolder-btn').forEach(btn => {
   btn.addEventListener('click', () => {

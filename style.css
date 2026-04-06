@@ -1600,3 +1600,32 @@ body.cursor-hover #cursor-ring { border-color: rgba(240,171,252,0.7) !important;
     transition: color 0.5s ease, transform 0.5s cubic-bezier(0.34,1.56,0.64,1), letter-spacing 0.5s ease !important;
   }
 }
+
+/* ===== MOBILE: CLICK ME BADGE ON FOLDER ===== */
+@media (max-width: 768px) {
+  .jfolder-btn {
+    position: relative;
+  }
+  .jfolder-btn::after {
+    content: '👆 Click Me';
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--pd), var(--pk));
+    color: white;
+    font-size: 0.62rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0 4px 12px rgba(124,58,237,0.4);
+    animation: floatBadge 1.8s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes floatBadge {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%       { transform: translateX(-50%) translateY(-5px); }
+  }
+}
