@@ -222,25 +222,36 @@ document.querySelectorAll('.btn-glow, .btn-outline, .btn-nav').forEach(btn => {
   });
 });
 
-// ===== MOBILE: JOURNEY ZOOM FOLLOWS SPINE =====
+// ===== MOBILE: AUTO OPEN SERVICE CARDS ON SCROLL =====
+if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+  // Service cards — nyala satu per satu
+  const scardObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      entry.target.classList.toggle('mobile-active', entry.isIntersecting);
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.scard').forEach(c => scardObserver.observe(c));
+
+  // Project cards — nyala satu per satu
+  const pcardObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      entry.target.classList.toggle('mobile-active', entry.isIntersecting);
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('.pcard').forEach(c => pcardObserver.observe(c));
+}
 if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
   function updateJourneyMobile() {
     const rows = document.querySelectorAll('.jrow');
-    const spineFill = document.getElementById('journeySpineFill');
-    if (!spineFill) return;
-
-    // posisi ujung bawah spine fill (px dari top viewport)
-    const spineRect = spineFill.getBoundingClientRect();
-    const spineTip = spineRect.bottom;
 
     rows.forEach(row => {
       const rect = row.getBoundingClientRect();
-      const rowDot = rect.top + 28; // posisi dot di row
-      const dist = Math.abs(spineTip - rowDot);
-      const maxDist = 180;
-      // ratio: 0 = spine tepat di dot ini, 1 = jauh
+      const dotY = rect.top + 28; // posisi dot
+      const viewMid = window.innerHeight * 0.45;
+      const dist = Math.abs(viewMid - dotY);
+      const maxDist = 80; // radius kecil — hanya 1 item aktif sekaligus
       const ratio = Math.min(dist / maxDist, 1);
-      const active = ratio < 0.6;
+      const active = ratio < 1;
 
       active ? row.classList.add('in-view') : row.classList.remove('in-view');
 
@@ -248,13 +259,13 @@ if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
       const folderBtn = row.querySelector('.jfolder-btn');
 
       if (yearEl) {
-        const scale = active ? (1 + (1 - ratio) * 2.8) : 1;
+        const scale = active ? (1 + (1 - ratio) * 3.0) : 1.0;
         const opacity = active ? (0.08 + (1 - ratio) * 0.55) : 0.05;
         yearEl.style.transform = `scale(${scale.toFixed(2)})`;
         yearEl.style.color = `rgba(192,132,252,${opacity.toFixed(2)})`;
       }
       if (folderBtn) {
-        const scale = active ? (1 + (1 - ratio) * 0.5) : 1;
+        const scale = active ? (1 + (1 - ratio) * 0.6) : 1.0;
         folderBtn.style.transform = `scale(${scale.toFixed(2)})`;
       }
     });
