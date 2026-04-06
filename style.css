@@ -1763,3 +1763,48 @@ body.cursor-hover #cursor-ring { border-color: rgba(240,171,252,0.7) !important;
   .tb-py    { left: -8px; top: 80%; }
   .tb-mysql { right: -8px; top: 42%; }
 }
+
+/* ===== SPLASH NOTICE / DISCLAIMER ===== */
+.splash-notice {
+  width: 100%; max-width: 320px;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,165,0,0.2);
+  border-radius: 14px;
+  padding: 14px 16px;
+  text-align: left;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.06);
+  position: relative; overflow: hidden;
+}
+.splash-notice::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, #f97316, var(--pk), #fbbf24);
+}
+.splash-notice-header {
+  display: flex; align-items: center; gap: 7px; margin-bottom: 8px;
+}
+.splash-notice-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #f97316;
+  box-shadow: 0 0 6px rgba(249,115,22,0.6);
+  animation: blink 1.5s infinite;
+}
+.splash-notice-label {
+  font-size: 0.72rem; font-weight: 700; color: #fbbf24;
+  letter-spacing: 0.5px; font-family: 'Fira Code', monospace;
+}
+.splash-notice-text {
+  font-size: 0.7rem; color: var(--tm); line-height: 1.65; margin-bottom: 12px;
+}
+.splash-notice-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(37,211,102,0.1);
+  border: 1px solid rgba(37,211,102,0.3);
+  color: #25d366; font-size: 0.7rem; font-weight: 700;
+  padding: 6px 14px; border-radius: 20px;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.2s;
+}
+.splash-notice-btn:hover { background: rgba(37,211,102,0.2); transform: translateY(-1px); }
