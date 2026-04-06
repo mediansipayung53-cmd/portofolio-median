@@ -238,12 +238,28 @@ if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
   document.querySelectorAll('.jrow').forEach(row => jrowObserver.observe(row));
 }
 document.querySelectorAll('.jfolder-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
+  let touchMoved = false;
+
+  btn.addEventListener('touchstart', () => { touchMoved = false; }, { passive: true });
+  btn.addEventListener('touchmove', () => { touchMoved = true; }, { passive: true });
+  btn.addEventListener('touchend', (e) => {
+    if (touchMoved) return; // user lagi scroll, bukan tap
+    e.preventDefault();
     const idx = btn.dataset.index;
     const gallery = document.getElementById('gallery-' + idx);
     if (!gallery) return;
     const isOpen = gallery.classList.contains('open');
-    // tutup semua
+    document.querySelectorAll('.jfolder-gallery.open').forEach(g => g.classList.remove('open'));
+    if (!isOpen) gallery.classList.add('open');
+  });
+
+  // tetap support click untuk desktop
+  btn.addEventListener('click', (e) => {
+    if ('ontouchstart' in window) return; // skip di mobile, sudah handled touchend
+    const idx = btn.dataset.index;
+    const gallery = document.getElementById('gallery-' + idx);
+    if (!gallery) return;
+    const isOpen = gallery.classList.contains('open');
     document.querySelectorAll('.jfolder-gallery.open').forEach(g => g.classList.remove('open'));
     if (!isOpen) gallery.classList.add('open');
   });

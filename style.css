@@ -1606,26 +1606,32 @@ body.cursor-hover #cursor-ring { border-color: rgba(240,171,252,0.7) !important;
   .jfolder-btn {
     position: relative;
   }
-  .jfolder-btn::after {
-    content: '👆 Click Me';
+  .jfolder-btn::before {
+    content: '→';
     position: absolute;
-    top: -28px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(135deg, var(--pd), var(--pk));
-    color: white;
-    font-size: 0.62rem;
-    font-weight: 700;
-    padding: 4px 10px;
-    border-radius: 20px;
-    white-space: nowrap;
-    font-family: 'Inter', sans-serif;
-    box-shadow: 0 4px 12px rgba(124,58,237,0.4);
-    animation: floatBadge 1.8s ease-in-out infinite;
+    top: 50%;
+    left: -28px;
+    transform: translateY(-50%);
+    color: var(--pl);
+    font-size: 1rem;
+    opacity: 0.7;
+    animation: nudgeArrow 1.4s ease-in-out infinite;
     pointer-events: none;
   }
-  @keyframes floatBadge {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50%       { transform: translateX(-50%) translateY(-5px); }
+  .jfolder-btn::after {
+    content: 'tap';
+    position: absolute;
+    top: -22px;
+    left: 8px;
+    color: var(--tm);
+    font-size: 0.58rem;
+    font-family: 'Fira Code', monospace;
+    letter-spacing: 1px;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  @keyframes nudgeArrow {
+    0%, 100% { transform: translateY(-50%) translateX(0); opacity: 0.5; }
+    50%       { transform: translateY(-50%) translateX(5px); opacity: 1; }
   }
 }
