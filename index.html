@@ -10,6 +10,28 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<!-- SPLASH SCREEN -->
+<div id="splash">
+  <div class="splash-inner">
+    <div class="splash-logo"><span class="logo-bracket"></span>Ms<span class="logo-bracket"></span></div>
+    <h2 class="splash-title">Median Sipayung</h2>
+    <p class="splash-sub">Junior Programmer & Web Developer</p>
+    <div class="splash-loader">
+      <div class="splash-bar"><div class="splash-bar-fill" id="splashBarFill"></div></div>
+      <span class="splash-pct" id="splashPct">0%</span>
+    </div>
+    <button class="splash-btn" id="splashBtn">
+      <span class="splash-btn-icon">▶</span>
+      <span>Play Music & Enter</span>
+    </button>
+    <p class="splash-hint" id="splashHint">Menunggu halaman siap...</p>
+  </div>
+  <div class="splash-bg-glow"></div>
+</div>
+
+<!-- AUDIO -->
+<video id="bgAudio" src="snaptik_7384161000481672453_v3.mp4" loop preload="none" style="display:none"></video>
+
 <!-- CUSTOM CURSOR -->
 <div id="cursor-dot"></div>
 <div id="cursor-ring"></div>
@@ -582,7 +604,7 @@
           </div>
           <div class="fg">
             <label>Email</label>
-            <input type="email" placeholder="email@kamu.com" required />
+            <input type="email" placeholder="emailkamu@gmail.com" required />
           </div>
           <div class="fg">
             <label>Subjek</label>

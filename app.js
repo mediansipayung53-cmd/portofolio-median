@@ -364,3 +364,46 @@ if (testiGrid && testiDots.length) {
     });
   });
 }
+
+// ===== SPLASH SCREEN =====
+(function() {
+  const splash = document.getElementById('splash');
+  const btn = document.getElementById('splashBtn');
+  const hint = document.getElementById('splashHint');
+  const barFill = document.getElementById('splashBarFill');
+  const pct = document.getElementById('splashPct');
+  const audio = document.getElementById('bgAudio');
+
+  let progress = 0;
+  let pageReady = false;
+
+  // simulasi loading bar
+  const interval = setInterval(() => {
+    const increment = pageReady ? 4 : 1.2;
+    progress = Math.min(progress + increment, 100);
+    barFill.style.width = progress + '%';
+    pct.textContent = Math.floor(progress) + '%';
+
+    if (progress >= 100) {
+      clearInterval(interval);
+      btn.classList.add('ready');
+      hint.textContent = 'Siap! Klik untuk masuk 🎵';
+    }
+  }, 40);
+
+  // tandai page sudah load
+  window.addEventListener('load', () => {
+    pageReady = true;
+  });
+
+  // klik tombol
+  btn.addEventListener('click', () => {
+    if (!btn.classList.contains('ready')) return;
+    // play audio
+    audio.volume = 0.5;
+    audio.play().catch(() => {});
+    // hide splash
+    splash.classList.add('hide');
+    setTimeout(() => { splash.style.display = 'none'; }, 700);
+  });
+})();

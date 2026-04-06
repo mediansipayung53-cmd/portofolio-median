@@ -1469,3 +1469,85 @@ body.cursor-hover #cursor-ring { border-color: rgba(240,171,252,0.7) !important;
   .hplus { font-size: 1rem !important; }
   .hstat p { font-size: 0.58rem !important; }
 }
+
+/* ===== SPLASH SCREEN ===== */
+#splash {
+  position: fixed; inset: 0; z-index: 99999;
+  background: var(--bg);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+#splash.hide {
+  opacity: 0; visibility: hidden; pointer-events: none;
+}
+.splash-bg-glow {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 50% at 20% 20%, rgba(124,58,237,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(192,132,252,0.1) 0%, transparent 60%);
+}
+.splash-inner {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; align-items: center;
+  gap: 14px; text-align: center; padding: 0 24px;
+}
+.splash-logo {
+  font-family: 'Fira Code', monospace; font-size: 1.4rem;
+  font-weight: 500; color: var(--pl); margin-bottom: 4px;
+}
+.splash-logo .logo-bracket { color: var(--pk); }
+.splash-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  letter-spacing: 4px; text-transform: uppercase;
+  background: linear-gradient(135deg, #fff 0%, var(--pl) 60%, var(--pk) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; line-height: 1; margin: 0;
+}
+.splash-sub {
+  font-family: 'Fira Code', monospace; font-size: 0.8rem;
+  color: var(--cy); letter-spacing: 1px;
+}
+.splash-loader {
+  display: flex; align-items: center; gap: 10px;
+  width: 240px; margin-top: 8px;
+}
+.splash-bar {
+  flex: 1; height: 3px; background: rgba(255,255,255,0.08);
+  border-radius: 99px; overflow: hidden;
+}
+.splash-bar-fill {
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, var(--pd), var(--pk));
+  border-radius: 99px;
+  transition: width 0.1s linear;
+}
+.splash-pct {
+  font-family: 'Fira Code', monospace; font-size: 0.7rem;
+  color: var(--pl); min-width: 32px; text-align: right;
+}
+.splash-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: linear-gradient(135deg, var(--pd), var(--p));
+  color: white; border: none; border-radius: 50px;
+  padding: 14px 32px; font-size: 0.9rem; font-weight: 700;
+  cursor: pointer; margin-top: 8px;
+  box-shadow: 0 4px 24px rgba(124,58,237,0.4);
+  transition: all 0.25s; opacity: 0.4; pointer-events: none;
+  font-family: 'Inter', sans-serif;
+}
+.splash-btn.ready {
+  opacity: 1; pointer-events: auto;
+  animation: splashPulse 2s ease-in-out infinite;
+}
+.splash-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(124,58,237,0.6); }
+.splash-btn-icon { font-size: 1rem; }
+@keyframes splashPulse {
+  0%,100% { box-shadow: 0 4px 24px rgba(124,58,237,0.4); }
+  50% { box-shadow: 0 4px 40px rgba(192,132,252,0.7); }
+}
+.splash-hint {
+  font-size: 0.7rem; color: var(--tm);
+  font-family: 'Fira Code', monospace;
+}
