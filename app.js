@@ -227,7 +227,8 @@ document.querySelectorAll('.btn-glow, .btn-outline, .btn-nav').forEach(btn => {
 if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
   const mobileFrame = document.querySelector('.img-frame');
   const mobileSpotlight = document.getElementById('imgSpotlight');
-  if (mobileFrame && mobileSpotlight) {
+  const mobileImg = mobileFrame ? mobileFrame.querySelector('img') : null;
+  if (mobileFrame && mobileSpotlight && mobileImg) {
     mobileFrame.addEventListener('touchmove', e => {
       e.preventDefault();
       const touch = e.touches[0];
@@ -235,10 +236,12 @@ if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
       const x = ((touch.clientX - rect.left) / rect.width) * 100;
       const y = ((touch.clientY - rect.top) / rect.height) * 100;
       mobileSpotlight.style.opacity = '1';
-      mobileSpotlight.style.background = `radial-gradient(circle 110px at ${x.toFixed(1)}% ${y.toFixed(1)}%, transparent 0%, rgba(0,0,0,0.82) 100%)`;
+      mobileSpotlight.style.background = `radial-gradient(circle 110px at ${x.toFixed(1)}% ${y.toFixed(1)}%, transparent 0%, rgba(0,0,0,0.72) 100%)`;
+      mobileImg.style.filter = 'brightness(1) grayscale(0)';
     }, { passive: false });
     mobileFrame.addEventListener('touchend', () => {
       mobileSpotlight.style.opacity = '0';
+      mobileImg.style.filter = 'brightness(0.35) grayscale(0.2)';
     });
   }
 }
