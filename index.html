@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
 <!-- SPLASH SCREEN -->
@@ -121,7 +122,7 @@
         <div class="hstat-div"></div>
         <div class="hstat"><span class="hnum" data-target="2">0</span><span class="hplus">+</span><p>Tahun Coding</p></div>
         <div class="hstat-div"></div>
-        <div class="hstat"><span class="hnum" data-target="5">0</span><span class="hplus">+</span><p>Technology</p></div>
+        <div class="hstat"><span class="hnum" data-target="5">0</span><stpan class="hplus">+</span><p>Technology</p></div>
       </div>
     </div>
 
@@ -618,19 +619,19 @@
           </div>
           <div class="fg">
             <label>Nama Lengkap</label>
-            <input type="text" placeholder="Nama kamu" required />
+            <input type="text" name="from_name" placeholder="Nama kamu" required />
           </div>
           <div class="fg">
             <label>Email</label>
-            <input type="email" placeholder="emailkamu@gmail.com" required />
+            <input type="email" name="reply_to" placeholder="emailkamu@gmail.com" required />
           </div>
           <div class="fg">
             <label>Subjek</label>
-            <input type="text" placeholder="Mau ngobrol soal apa?" />
+            <input type="text" name="subject" placeholder="Mau ngobrol soal apa?" />
           </div>
           <div class="fg">
             <label>Pesan</label>
-            <textarea rows="4" placeholder="Ceritakan proyek atau ide kamu..." required></textarea>
+            <textarea rows="4" name="message" placeholder="Ceritakan proyek atau ide kamu..." required></textarea>
           </div>
           <button type="submit" class="btn-glow btn-full">
             <span class="btn-text">Kirim Pesan</span> <span>→</span>

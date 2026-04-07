@@ -64,17 +64,30 @@ if (hs) co.observe(hs);
 document.getElementById('scrollTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
 // ===== CONTACT FORM =====
+emailjs.init('ppHcIOmiFD-Jk0fLN');
+
 document.getElementById('contactForm').addEventListener('submit', function(e) {
   e.preventDefault();
   const btn = this.querySelector('.btn-text');
   const ok = document.getElementById('formSuccess');
   btn.textContent = 'Mengirim...';
-  setTimeout(() => {
-    btn.textContent = 'Kirim Pesan';
-    ok.classList.add('show');
-    this.reset();
-    setTimeout(() => ok.classList.remove('show'), 5000);
-  }, 1500);
+
+  emailjs.sendForm('service_1s415jo', 'govwwfa', this)
+    .then(() => {
+      btn.textContent = 'Kirim Pesan';
+      ok.classList.add('show');
+      this.reset();
+      setTimeout(() => ok.classList.remove('show'), 5000);
+    })
+    .catch(() => {
+      btn.textContent = 'Kirim Pesan';
+      ok.textContent = '❌ Gagal mengirim. Coba lagi ya!';
+      ok.classList.add('show');
+      setTimeout(() => {
+        ok.classList.remove('show');
+        ok.textContent = '✅ Pesan terkirim! Saya akan segera balas ya.';
+      }, 4000);
+    });
 });
 
 // ===== ACTIVE NAV =====
