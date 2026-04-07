@@ -64,23 +64,35 @@ if (hs) co.observe(hs);
 document.getElementById('scrollTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
 // ===== CONTACT FORM =====
-emailjs.init('ppHcIOmiFD-Jk0fLN');
+// Ganti nilai di bawah ini dengan ID dari dashboard EmailJS kamu:
+// https://dashboard.emailjs.com
+const EMAILJS_PUBLIC_KEY  = 'ppHcIOmiFD-Jk0fLN';   // Account → Public Key
+const EMAILJS_SERVICE_ID  = 'service_abc123';   // Email Services → Service ID
+const EMAILJS_TEMPLATE_ID = 'template_eamsmge';  // Email Templates → Template ID
+
+emailjs.init(EMAILJS_PUBLIC_KEY);
 
 document.getElementById('contactForm').addEventListener('submit', function(e) {
   e.preventDefault();
   const btn = this.querySelector('.btn-text');
   const ok = document.getElementById('formSuccess');
-  btn.textContent = 'Mengirim...';
 
-  emailjs.sendForm('service_1s415jo', 'govwwfa', this)
+  btn.textContent = 'Mengirim...';
+  btn.disabled = true;
+
+  emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
     .then(() => {
       btn.textContent = 'Kirim Pesan';
+      btn.disabled = false;
+      ok.textContent = '✅ Pesan terkirim! Saya akan segera balas ya.';
       ok.classList.add('show');
       this.reset();
       setTimeout(() => ok.classList.remove('show'), 5000);
     })
-    .catch(() => {
+    .catch((err) => {
+      console.error('EmailJS error:', err);
       btn.textContent = 'Kirim Pesan';
+      btn.disabled = false;
       ok.textContent = '❌ Gagal mengirim. Coba lagi ya!';
       ok.classList.add('show');
       setTimeout(() => {
