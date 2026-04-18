@@ -1904,35 +1904,48 @@ body.cursor-hover #cursor-ring { border-color: rgba(240,171,252,0.7) !important;
 
 .scroll-hint {
   position: absolute;
-  bottom: 1.8rem;
+  bottom: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
   cursor: pointer;
   text-align: center;
   transition: opacity 0.5s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .scroll-hint-text {
   display: inline-block;
   font-family: 'Fira Code', monospace !important;
-  font-size: 1.1rem !important;
+  font-size: 0.78rem !important;
   font-weight: 700 !important;
-  letter-spacing: 0.22em !important;
+  letter-spacing: 0.35em !important;
   text-transform: uppercase !important;
-  color: #c084fc !important;
-  -webkit-text-fill-color: #c084fc !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
   background: none !important;
   -webkit-background-clip: unset !important;
   background-clip: unset !important;
-  text-shadow: 0 0 20px rgba(192,132,252,1), 0 0 50px rgba(192,132,252,0.6) !important;
-  animation: blinkGlow 1.1s ease-in-out infinite !important;
+  text-shadow: 0 0 12px rgba(255,255,255,0.9) !important;
+  animation: blinkGlow 1.4s ease-in-out infinite !important;
   white-space: nowrap;
+}
+
+.scroll-hint-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f0abfc;
+  box-shadow: 0 0 8px #f0abfc, 0 0 16px #f0abfc;
+  animation: blinkGlow 1.4s ease-in-out infinite;
+  flex-shrink: 0;
 }
 
 @keyframes blinkGlow {
   0%, 100% { opacity: 1; }
-  50%       { opacity: 0.1; }
+  50%       { opacity: 0.08; }
 }
 
 .scroll-hint.hidden {
@@ -1941,6 +1954,16 @@ body.cursor-hover #cursor-ring { border-color: rgba(240,171,252,0.7) !important;
 }
 
 @media (max-width: 768px) {
-  .scroll-hint { bottom: 1.2rem; }
-  .scroll-hint-text { font-size: 1rem !important; letter-spacing: 0.16em !important; }
+  .scroll-hint {
+    bottom: 1rem;
+    gap: 10px;
+  }
+  .scroll-hint-text {
+    font-size: 0.7rem !important;
+    letter-spacing: 0.3em !important;
+  }
+  .scroll-hint-dot {
+    width: 5px;
+    height: 5px;
+  }
 }
