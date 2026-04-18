@@ -1899,90 +1899,57 @@ body.cursor-hover #cursor-ring { border-color: rgba(240,171,252,0.7) !important;
   .lb-img-wrap img { border-radius: 8px; }
 }
 
-/* ===== SCROLL DOWN ARROW ===== */
-.scroll-down-arrow {
+/* ===== SCROLL HINT ===== */
+.scroll-hint {
   position: absolute;
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
   cursor: pointer;
   z-index: 10;
+  white-space: nowrap;
   transition: opacity 0.5s ease;
+  animation: hintPulse 3s ease-in-out infinite;
 }
 
-/* Mouse shape */
-.sda-mouse {
-  width: 26px;
-  height: 42px;
-  border: 2px solid rgba(192,132,252,0.7);
-  border-radius: 13px;
-  display: flex;
-  justify-content: center;
-  padding-top: 6px;
-  box-shadow: 0 0 12px rgba(192,132,252,0.3), inset 0 0 8px rgba(192,132,252,0.05);
-  animation: mousePulse 2.5s ease-in-out infinite;
+.scroll-hint-text {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #c084fc, #a5f3fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.sda-wheel {
-  width: 4px;
-  height: 8px;
-  background: linear-gradient(180deg, #c084fc, #a5f3fc);
-  border-radius: 2px;
-  animation: wheelScroll 2.5s ease-in-out infinite;
+.scroll-hint-line {
+  display: block;
+  width: 36px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c084fc);
+}
+.scroll-hint-line:last-child {
+  background: linear-gradient(90deg, #a5f3fc, transparent);
 }
 
-/* Chevrons below mouse */
-.sda-chevrons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0px;
+@keyframes hintPulse {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 1; }
 }
 
-.sda-chev {
-  width: 22px;
-  height: 13px;
-  opacity: 0;
-  animation: chevDrop 2.5s ease-in-out infinite;
-}
-.sda-chev:nth-child(1) { animation-delay: 0.1s; }
-.sda-chev:nth-child(2) { animation-delay: 0.35s; }
-
-@keyframes wheelScroll {
-  0%   { transform: translateY(0);   opacity: 1; }
-  60%  { transform: translateY(10px); opacity: 0; }
-  61%  { transform: translateY(0);   opacity: 0; }
-  100% { transform: translateY(0);   opacity: 1; }
-}
-
-@keyframes mousePulse {
-  0%, 100% { border-color: rgba(192,132,252,0.7); box-shadow: 0 0 12px rgba(192,132,252,0.3); }
-  50%       { border-color: rgba(165,243,252,0.9); box-shadow: 0 0 20px rgba(165,243,252,0.4); }
-}
-
-@keyframes chevDrop {
-  0%   { opacity: 0; transform: translateY(-4px); }
-  40%  { opacity: 1; transform: translateY(0); }
-  80%  { opacity: 0; transform: translateY(5px); }
-  100% { opacity: 0; transform: translateY(5px); }
-}
-
-/* Hide when user scrolls down */
-.scroll-down-arrow.hidden {
-  opacity: 0;
+.scroll-hint.hidden {
+  opacity: 0 !important;
   pointer-events: none;
 }
 
-/* Make sure hero section is relative */
 #hero { position: relative; }
 
 @media (max-width: 768px) {
-  .scroll-down-arrow { bottom: 1.5rem; }
-  .sda-mouse { width: 22px; height: 36px; border-radius: 11px; padding-top: 5px; }
-  .sda-wheel { width: 3px; height: 6px; }
-  .sda-chev  { width: 18px; height: 11px; }
+  .scroll-hint { bottom: 1.2rem; }
+  .scroll-hint-text { font-size: 0.65rem; letter-spacing: 0.14em; }
+  .scroll-hint-line { width: 24px; }
 }
