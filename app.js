@@ -599,3 +599,24 @@ if (testiGrid && testiDots.length) {
     if (e.key === 'ArrowRight')  nextImage();
   });
 })();
+
+// ===== SCROLL DOWN ARROW =====
+(function() {
+  const arrow = document.getElementById('scrollDownArrow');
+  if (!arrow) return;
+
+  // Click to scroll to about section
+  arrow.addEventListener('click', function() {
+    const about = document.getElementById('about');
+    if (about) about.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Hide arrow once user scrolls
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 80) {
+      arrow.classList.add('hidden');
+    } else {
+      arrow.classList.remove('hidden');
+    }
+  }, { passive: true });
+})();
