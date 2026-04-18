@@ -1908,46 +1908,81 @@ body.cursor-hover #cursor-ring { border-color: rgba(240,171,252,0.7) !important;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
+  gap: 6px;
   cursor: pointer;
   z-index: 10;
-  animation: scrollBounce 1.8s ease-in-out infinite;
+  transition: opacity 0.5s ease;
 }
 
-.scroll-down-arrow .chev {
-  width: 38px;
-  height: 22px;
+/* Mouse shape */
+.sda-mouse {
+  width: 26px;
+  height: 42px;
+  border: 2px solid rgba(192,132,252,0.7);
+  border-radius: 13px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+  box-shadow: 0 0 12px rgba(192,132,252,0.3), inset 0 0 8px rgba(192,132,252,0.05);
+  animation: mousePulse 2.5s ease-in-out infinite;
+}
+
+.sda-wheel {
+  width: 4px;
+  height: 8px;
+  background: linear-gradient(180deg, #c084fc, #a5f3fc);
+  border-radius: 2px;
+  animation: wheelScroll 2.5s ease-in-out infinite;
+}
+
+/* Chevrons below mouse */
+.sda-chevrons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0px;
+}
+
+.sda-chev {
+  width: 22px;
+  height: 13px;
   opacity: 0;
-  animation: chevFade 1.8s ease-in-out infinite;
+  animation: chevDrop 2.5s ease-in-out infinite;
+}
+.sda-chev:nth-child(1) { animation-delay: 0.1s; }
+.sda-chev:nth-child(2) { animation-delay: 0.35s; }
+
+@keyframes wheelScroll {
+  0%   { transform: translateY(0);   opacity: 1; }
+  60%  { transform: translateY(10px); opacity: 0; }
+  61%  { transform: translateY(0);   opacity: 0; }
+  100% { transform: translateY(0);   opacity: 1; }
 }
 
-.scroll-down-arrow .chev:nth-child(1) { animation-delay: 0s; }
-.scroll-down-arrow .chev:nth-child(2) { animation-delay: 0.18s; }
-.scroll-down-arrow .chev:nth-child(3) { animation-delay: 0.36s; }
-
-@keyframes chevFade {
-  0%   { opacity: 0;    transform: translateY(-6px); }
-  40%  { opacity: 0.9;  transform: translateY(0px); }
-  70%  { opacity: 0.5;  transform: translateY(4px); }
-  100% { opacity: 0;    transform: translateY(8px); }
+@keyframes mousePulse {
+  0%, 100% { border-color: rgba(192,132,252,0.7); box-shadow: 0 0 12px rgba(192,132,252,0.3); }
+  50%       { border-color: rgba(165,243,252,0.9); box-shadow: 0 0 20px rgba(165,243,252,0.4); }
 }
 
-@keyframes scrollBounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50%       { transform: translateX(-50%) translateY(6px); }
+@keyframes chevDrop {
+  0%   { opacity: 0; transform: translateY(-4px); }
+  40%  { opacity: 1; transform: translateY(0); }
+  80%  { opacity: 0; transform: translateY(5px); }
+  100% { opacity: 0; transform: translateY(5px); }
 }
 
 /* Hide when user scrolls down */
 .scroll-down-arrow.hidden {
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.5s ease;
 }
 
 /* Make sure hero section is relative */
 #hero { position: relative; }
 
-@media (max-width: 600px) {
-  .scroll-down-arrow { bottom: 1.2rem; }
-  .scroll-down-arrow .chev { width: 30px; height: 18px; }
+@media (max-width: 768px) {
+  .scroll-down-arrow { bottom: 1.5rem; }
+  .sda-mouse { width: 22px; height: 36px; border-radius: 11px; padding-top: 5px; }
+  .sda-wheel { width: 3px; height: 6px; }
+  .sda-chev  { width: 18px; height: 11px; }
 }
